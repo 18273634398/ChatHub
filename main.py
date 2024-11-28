@@ -1,6 +1,7 @@
-from server.chatClinet import chat
-from control.settings import user_name
 from control.settings import Kimi_notice
+from control.settings import user_name
+from server.chatClinet import chat
+
 hintText = '''
 Welcome to the chatbot!
 Now please select a model_old:
@@ -10,6 +11,7 @@ Now please select a model_old:
     4. Kimi Model(月影模型)
 Input:
 '''
+
 select = input(hintText)
 message = input("Welcome to chatHub!now type your question\n"+user_name+": ")
 if select == '1':
