@@ -1,7 +1,14 @@
-from time import sleep
+from control import System
 
-def input_check(text):
+
+def input_check(text,model):
     if text == "exit":
-        print("正在退出系统，欢迎下次使用")
-        sleep(1)
+        System.Stop()
         exit()
+    elif text =="update" or text =="updateKey" or text =="update_key" or text =="update_api_key":
+        inputKey = input("请输入新的密钥：")
+        model.update_api_key(inputKey)
+        System.Restart()
+    else:
+        return True
+
