@@ -1,6 +1,8 @@
-from control.settings import Kimi_notice
+from control.settings import Kimi_model_notice, deepSeek_model_notice, zeroOne_model_notice, big_model_notice
 from control.settings import user_name
 from server.chatClinet import chat
+
+DEFAULT_MODEL = 2
 
 hintText = '''
 Welcome to the chatbot!
@@ -13,18 +15,22 @@ Input:
 '''
 
 select = input(hintText)
-message = input("Welcome to chatHub!now type your question\n"+user_name+": ")
 if select == '1':
+    message = input(big_model_notice+"\n"+user_name+": ")
     chat(message, None,1)
 elif select == '2':
+    message = input(deepSeek_model_notice+"\n"+user_name+": ")
     chat(message, None,2)
 elif select == '3':
+    message = input(zeroOne_model_notice+"\n"+user_name+": ")
     chat(message, None,3)
 elif select == '4':
-    print(Kimi_notice)
+    message = input(Kimi_model_notice+"\n"+user_name+": ")
+    print(Kimi_model_notice)
     chat(message, None,4)
 else:
-    print("Invalid selection, please try again.")
+    message = input("[客户端通知] 选择模型错误，使用默认模型\n"+user_name+": ")
+    chat(message, None,DEFAULT_MODEL)
 
 
 

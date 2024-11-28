@@ -14,7 +14,7 @@ def chat_init(text,model):
     client = OpenAI(api_key=model.api_key, base_url=model.base_url)
     # 提示词工程
     messages=[
-        {"role": "system", "content": "You are a helpful assistant"},
+        {"role": "system", "content": settings.Prompt},
         {"role": "user", "content": text},
     ]
     # 调用API进行对话
@@ -35,6 +35,8 @@ def chat_init(text,model):
         if settings.showApiUsage and chunk.usage:
             print("\n[本次调用已使用 API 配额: "+str(chunk.usage.total_tokens)+" tokens],剩余配额:"+str(check_balance(model)))
     messages.append(chatTempResponse)
+    if settings.showHistory:
+        print(f"\n\n\n【对话历史记录】\n{messages}")
     return messages
 
 
@@ -52,11 +54,17 @@ def chat(text,messages,model):
             if messages == None or not(settings.longConversation):
                 messages = chat_init(text,model)
             else:
+                # 中间提示词
+                if settings.haveIntervalPrompt:
+                    messages.append(settings.IntervalPrompt)
+                messages.append({"role": "user", "content": text})
                 client = OpenAI(api_key=model.api_key, base_url=model.base_url)
                 response = client.chat.completions.create(
                     model=model.model,
                     messages=messages,
-                    stream=True
+                    stream=True,
+                    tools=model.tools,
+                    max_tokens=settings.max_tokens
                 )
                 print(settings.assistant_name+":",end='')
                 chatTempResponse = {"role": "assistant", "content":"" }
@@ -68,6 +76,8 @@ def chat(text,messages,model):
                     if settings.showApiUsage and chunk.usage:
                         print("\n[本次调用已使用 API 配额: "+str(chunk.usage.total_tokens)+" tokens],剩余配额:"+str(check_balance(model)))
                 messages.append(chatTempResponse)
+                if settings.showHistory:
+                    print(f"\n\n\n【对话历史记录】\n{messages}")
 
             # 启动第二轮对话
             text = input("\n"+settings.user_name+": ")
