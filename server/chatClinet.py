@@ -12,7 +12,7 @@ def chat_init(text,model):
     client = OpenAI(api_key=model.api_key, base_url=model.base_url)
     # 提示词工程
     if model.Prompt:
-        prompt = model.Prompt
+        prompt = settings.Prompt + model.Prompt
     else:
         prompt = settings.Prompt
     messages=[
@@ -45,7 +45,6 @@ def chat_init(text,model):
 
 # 用于多轮对话进行回复
 def chat(text,messages,model):
-
     try:
         # 进行model对象转化
         if not isinstance(model,templateModel.TemplateModel):

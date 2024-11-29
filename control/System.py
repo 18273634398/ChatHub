@@ -1,5 +1,6 @@
 from time import sleep
 
+from control.settings import load
 
 
 def Stop():
@@ -18,10 +19,10 @@ def Restart():
     Start()
 
 def Start():
+    load()  # 加载配置 必须优先加载运行
     from control  import settings
     from control.settings import user_name
     from server.chatClinet import chat
-
     DEFAULT_MODEL = 2
 
     hintText = f'''
@@ -54,6 +55,8 @@ Input:
     else:
         message = input("[客户端通知] 选择模型错误，使用默认模型\n"+user_name+": ")
         chat(message, None,DEFAULT_MODEL)
+
+
 
 
 
