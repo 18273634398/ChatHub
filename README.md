@@ -1,3 +1,5 @@
+ <p align="center"><img src="https://github.com/18273634398/ChatHub/blob/master/logo.png?raw=true"    width="300" /></p>
+ 
 # ChatHub
  ## 一款简单上手的大模型调用Python框架
  
@@ -6,12 +8,14 @@
  ## 使用说明
  ### 快速上手
 
-本框架将运行过程中用到的数据已经全部放于
- ![important](https://img.shields.io/badge/-important-important)
- control.settings中，在这里可以进行修改配置API_Key,Base_url以及用户昵称user_name等全局或核心数据。<br>
-
-
-<p align="left"><img src="https://github.com/18273634398/picture/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20241128153733.png?raw=true"    width="600" /></p>
+本框架将运行过程中用到的数据部分写于
+ control.settings中，在这里可以进行修改配置Base_url以及用户昵称user_name等全局或核心数据<br>
+ <p align="left"><img src="https://github.com/18273634398/picture/blob/main/global.png?raw=true"    width="800" /></p>
+ 
+  ![important](https://img.shields.io/badge/-important-important)
+  但基于安全考虑，API_key等个人隐私信息，需要用户在D:\Desktop\config.txt中按照图示方法进行填写
+  
+<p align="left"><img src="https://github.com/18273634398/picture/blob/main/api.png?raw=true"    width="800" /></p>
 
 ---
 当你填写api_key等配置信息后即可使用
@@ -50,23 +54,34 @@ Output:如果您的蓝牙耳机出现了物理损坏，比如外壳破裂、内�
 ```
 
 ## 版本更新
-> V0.1.0 [Test]<br>
-Date: 2024/11/27
-版本更新内容
-
-> V0.1.1 [Test]<br>
-Date: 2024/11/27
-版本更新内容
-
-> V0.2.0 [Test]<br>
-Date: 2024/11/28
-版本更新内容
+> V0.4.0 [Test | NEW]<br>
+Date: 2024/11/29<br>
+1.基于安全问题，现在已经移除了软件内部的API相关数据，关于如何填写自己的API信息，清参考之前的使用说明<br>
+2.优化大语言模型的提示词工程，尤其是对于BigModel(智谱清言模型)，通过设置提示词，可以让通过API调用的大语言模型坚定一个新的身份<br>
+3.优化代码结构<br>
+<p></p><br><br>
 
 > V0.3.0 [Test]<br>
-Date: 2024/11/29
-1.修复了之前版本中，对大模型输入指令"update"后出现的修改api_key后无法继续对话的bug，本版本通过重启函数让api_key更新后系统自动重启<br>
-2.新增了Restart函数用于系统重启
+Date: 2024/11/29<br>
+1.新增百川AI模型调用 (百川模型具有极强的实时信息处理能力)<br>
+<p></p><br><br>
 
-> V0.3.0 [Test | NEW]<br>
-Date: 2024/11/29
-1.新增百川AI模型调用 (百川模型具有极强的实时信息处理能力)
+> V0.3.0 [Test]<br>
+Date: 2024/11/29<br>
+1.修复了之前版本中，对大模型输入指令"update"后出现的修改api_key后无法继续对话的bug，本版本通过重启函数让api_key更新后系统自动重启<br>
+2.新增了Restart函数用于系统重启<br>
+<p></p><br><br>
+
+> V0.2.0 [Test]<br>
+Date: 2024/11/28<br>
+版本更新内容<br>
+<p></p><br><br>
+
+> V0.1.1 [Test]<br>
+Date: 2024/11/27<br>
+版本更新内容<br>
+<p></p><br><br>
+
+> V0.1.0 [Test]<br>
+Date: 2024/11/27<br>
+<p></p><br><br>
