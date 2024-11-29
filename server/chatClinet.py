@@ -1,5 +1,3 @@
-
-
 import requests
 from openai import OpenAI
 
@@ -83,7 +81,9 @@ def chat(text,messages,model):
             text = input("\n"+settings.user_name+": ")
             chat(text,messages,model)
     except Exception as e:
-        print(f"Error,错误信息：{e}")
+        print(f"错误信息:{e}")
+
+
 
 
 

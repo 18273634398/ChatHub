@@ -6,7 +6,7 @@ def input_check(text,model):
         System.Stop()
         exit()
     elif text =="update" or text =="updateKey" or text =="update_key" or text =="update_api_key":
-        inputKey = input("请输入新的密钥：")
+        inputKey = input("[客户端] 请输入新的密钥：")
         model.update_api_key(inputKey)
         System.Restart()
     else:
