@@ -92,4 +92,7 @@ def load():
         for key,value in parsed_data.items():
             globals()[key] = value
 
-    main("D:\\Desktop", "config.txt")
+    current_file_path = os.path.abspath(__file__)
+    temp_path = os.path.dirname(current_file_path)
+    path = os.path.dirname(temp_path)
+    main(path, "config.txt")
