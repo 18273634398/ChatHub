@@ -1,6 +1,6 @@
 class TemplateModel:
     def __init__(self):
-
+        self.model = None
         self.api_key = None
         self.Prompt = None
 

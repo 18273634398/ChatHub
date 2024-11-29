@@ -13,7 +13,7 @@
  <p align="left"><img src="https://github.com/18273634398/picture/blob/main/global.png?raw=true"    width="800" /></p>
  
   ![important](https://img.shields.io/badge/-important-important)
-  但基于安全考虑，API_key等个人隐私信息，需要用户在D:\Desktop\config.txt中按照图示方法进行填写
+  但基于安全考虑，API_key等个人隐私信息，需要用户在config.txt中按照图示方法进行填写
   
 <p align="left"><img src="https://github.com/18273634398/picture/blob/main/api.png?raw=true"    width="800" /></p>
 
@@ -54,7 +54,12 @@ Output:如果您的蓝牙耳机出现了物理损坏，比如外壳破裂、内�
 ```
 
 ## 版本更新
-> V0.4.0 [Test | NEW]<br>
+>V0.4.0 [Test | NEW]<br>
+Date: 2024/11/29<br>
+1.优化体验
+<p></p><br><br>
+
+> V0.4.0 [Test]<br>
 Date: 2024/11/29<br>
 1.基于安全问题，现在已经移除了软件内部的API相关数据，关于如何填写自己的API信息，清参考之前的使用说明<br>
 2.优化大语言模型的提示词工程，尤其是对于BigModel(智谱清言模型)，通过设置提示词，可以让通过API调用的大语言模型坚定一个新的身份<br>

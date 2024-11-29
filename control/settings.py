@@ -1,6 +1,7 @@
 # Global Settings
-user_name = "Input"
-assistant_name = "Output"
+delimiter = "："
+user_name = "Input" + delimiter
+assistant_name = "Output" + delimiter
 max_tokens = 4096
 temperature = 0.8
 showApiUsage = False
@@ -18,6 +19,12 @@ IntervalPrompt = {"role":"system","content":"请你分析用户最近的一次�
 
 
 # API Manage
+# ChatGPT Manage
+ChatGPT_api_key = ""
+ChatGPT_base_url = "https://api.vveai.com/v1/" # 代理网点
+ChatGPT_model_notice = "[客户端通知] 欢迎使用ChatGPT模型"
+ChatGPT_model_label = "[行业标杆]"
+
 # DeepSeek Manage
 DeepSeek_api_key = ""
 DeepSeek_base_url = "https://api.deepseek.com"
