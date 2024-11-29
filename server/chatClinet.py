@@ -2,17 +2,21 @@ import requests
 from openai import OpenAI
 
 from control import settings, checkSystem
-from server.model import DeepSeekModel, KimiModel, ZeroOneModel, BigModel, templateModel
+from server.model import DeepSeekModel, KimiModel, ZeroOneModel, BigModel, templateModel, BaiChuanModel
 
-modelList = [None,BigModel.BigModel(),DeepSeekModel.DeepSeekModel(),ZeroOneModel.ZeroOneModel(),KimiModel.KimiModel()]
+modelList = [None,BigModel.BigModel(),DeepSeekModel.DeepSeekModel(),ZeroOneModel.ZeroOneModel(),KimiModel.KimiModel(),BaiChuanModel.BaiChuanModel()]
 
 # 用于单论对话或初次对话
 def chat_init(text,model):
     # 初始化API
     client = OpenAI(api_key=model.api_key, base_url=model.base_url)
     # 提示词工程
+    if model.Prompt:
+        prompt = model.Prompt
+    else:
+        prompt = settings.Prompt
     messages=[
-        {"role": "system", "content": settings.Prompt},
+        {"role": "system", "content":prompt },
         {"role": "user", "content": text},
     ]
     # 调用API进行对话
@@ -20,7 +24,8 @@ def chat_init(text,model):
         model=model.model,
         messages=messages,
         stream=True,
-        tools=model.tools
+        tools=model.tools,
+        temperature = settings.temperature
     )
     # Chat流式回复响应
     chatTempResponse = {"role": "assistant", "content":"" }
