@@ -1,5 +1,6 @@
-DeepSeek_api_key:
-BigModel_api_key:
-ZeroOne_api_key:
-Kimi_api_key:
-BaiChuan_api_key:
+ChatGPT_api_key:sk-7AK9kBGBYtc4IBcoAc557eDa9274419bAd5480E431340244
+DeepSeek_api_key:sk-0a234aa7065d46c0b0630b49f5ae8cbe
+BigModel_api_key:db3cc1824946bbe99fc4a88e7bbb9a9d.G9tBherinRMdTuJv
+ZeroOne_api_key:561d66cc66ed4f81958c281f8d12322c
+Kimi_api_key:sk-qWf5B76ID9IQfxGRkGoF7K5Qh3oa5PwXAuBtyzXIk7pUjOSb
+BaiChuan_api_key:sk-d1d3c15705889dbb6fed7c446d1f8322
