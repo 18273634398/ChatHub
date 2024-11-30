@@ -2,9 +2,9 @@ import requests
 from openai import OpenAI
 
 from control import settings, checkSystem
-from server.model import DeepSeekModel, KimiModel, ZeroOneModel, BigModel, templateModel, BaiChuanModel
+from server.model import DeepSeekModel, KimiModel, ZeroOneModel, BigModel, templateModel, BaiChuanModel,ChatGPTModel
 
-modelList = [None,BigModel.BigModel(),DeepSeekModel.DeepSeekModel(),ZeroOneModel.ZeroOneModel(),KimiModel.KimiModel(),BaiChuanModel.BaiChuanModel()]
+modelList = [None,BigModel.BigModel(),DeepSeekModel.DeepSeekModel(),ZeroOneModel.ZeroOneModel(),KimiModel.KimiModel(),BaiChuanModel.BaiChuanModel(),ChatGPTModel.ChatGPTModel()]
 
 # 用于单论对话或初次对话
 def chat_init(text,model):

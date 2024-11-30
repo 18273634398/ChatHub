@@ -33,6 +33,7 @@ Welcome to the chatbot!
         3. ZeroOne Model(零一万物模型)  {settings.ZeroOne_model_label}
         4. Kimi Model(月影模型)  {settings.Kimi_model_label}
         5. BaiChuan Model(百川模型)  {settings.BaiChuan_model_label}
+        6. ChatGPT4o Model(ChatGPT模型)  {settings.ChatGPT_model_label}
 Input:
 '''
 
@@ -52,6 +53,9 @@ Input:
     elif select == '5':
         message = input(settings.BaiChuan_model_notice+"\n"+user_name+": ")
         chat(message, None,5)
+    elif select =='6':
+        message = input(settings.ChatGPT_model_notice+"\n"+user_name+": ")
+        chat(message, None,6)
     else:
         message = input("[客户端通知] 选择模型错误，使用默认模型\n"+user_name+": ")
         chat(message, None,DEFAULT_MODEL)
